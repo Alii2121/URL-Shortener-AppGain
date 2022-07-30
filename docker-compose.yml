@@ -4,14 +4,19 @@ services:
     restart: always
     build: .
     ports:
-      - 80:5000
+      - 5000
     volumes:
       - ./:/code
   mongo:
     image: mongo
     ports:
-      - 27017:27017
+      - 2703:2703
     volumes:
       - mongodb:/data/db
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
 volumes:
  mongodb:
